@@ -24,12 +24,11 @@ const ConfirmAccountView = () => {
 	};
 
     const handleComplete = (token: TokenConformation["token"]) => {
-        // Handle token validation and redirect to dashboard or home page
-        console.log("Token validated successfully", token);
-        // Redirect to dashboard or home page
-        window.location.href = "/"
-        mutate({token})
-    };
+			// Handle token validation and redirect to dashboard or home page
+			console.log("Token validated successfully", token);
+			// Redirect to dashboard or home page
+			mutate({ token });
+		};
 
     
   return (
