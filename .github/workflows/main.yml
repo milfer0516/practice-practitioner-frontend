@@ -33,7 +33,7 @@ jobs:
       - name: Deploy to AWS S3
         run: |
           if [[ -d build ]]; then
-            aws s3 sync build s3://practice-tests-practitioner/ --delete
+            aws s3 sync dist/ s3://practice-tests-practitioner/ --delete
           else
             echo "Build directory not found. Check the build process logs."
             exit 1
