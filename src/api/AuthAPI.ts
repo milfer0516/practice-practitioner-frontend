@@ -4,7 +4,8 @@ import { UserRegistrationForm, TokenConformation } from "../types";
 
 export async function createAccount(formData: UserRegistrationForm) {
 	try {
-		const url = "/auth/create-account";
+		//"/auth/create-account"
+		const url = `${import.meta.env.VITE_URL_API}/auth/create-account`;
 		const { data } = await api.post<string>(url, formData);
 		return data;
 	} catch (error) {
