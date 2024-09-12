@@ -18,13 +18,17 @@ const TestPractice = () => {
 	const [correctAnswersCount, setCorrectAnswersCount] = useState(0); // Contador de respuestas correctas
 	const [isAnswered, setIsAnswered] = useState(false); // Controla si ya se respondió la pregunta
 
-	// URL de la API que contiene las preguntas
-	const url_quations = import.meta.env.VITE_PATH_QUESTIONS_TEST;
+	// URL de la API que contiene las preguntas import.meta.env.VITE_PATH_QUESTIONS_TEST
+	const url_questions = `${
+		import.meta.env.VITE_PATH_TEST_QUESTION
+	}/test_practice-1.json`;
+	console.log(url_questions);
 
 	useEffect(() => {
 		const fetchQuestions = async () => {
 			try {
-				const response = await axios.get(url_quations);
+				const response = await axios.get(url_questions);
+				//console.log(response.data);
 				setQuestions(response.data);
 				setIsLoading(false);
 			} catch (error) {
@@ -33,7 +37,7 @@ const TestPractice = () => {
 		};
 
 		fetchQuestions();
-	}, [url_quations]);
+	}, [url_questions]);
 
 	// Controla si se ha respondido la pregunta actual
 	const currentQuestion = questions[currentQuestionIndex];
@@ -94,7 +98,6 @@ const TestPractice = () => {
 			</p>
 		);
 	}
-
 
 	return (
 		<div className="mx-auto w-full lg:w-3/4">
