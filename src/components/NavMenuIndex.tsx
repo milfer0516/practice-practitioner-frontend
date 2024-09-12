@@ -16,6 +16,12 @@ const NavMenuIndex = () => {
 				>
 					Login
 				</Link>
+				<Link
+					to="/auth/confirm-account"
+					className="ml-4 text-white px-7 py-2 text-lg font-medium hover:text-gray-200 bg-fuchsia-700 w-full text-center"
+				>
+					Confirmar
+				</Link>
 			</div>
 		</>
 	);

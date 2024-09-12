@@ -12,18 +12,31 @@ const AppLayout = () => {
 					</div>
 					<NavMenu />
 				</div>
-				
-			</header> 
+			</header>
 
 			<section className="max-w-screen-2xl mx-auto mt-10 p-5">
-				<Outlet />              
-			</section>	
-			<footer>
-				<p className='text-center'>Todos los derechos son reservados {' '}
-				{ new Date().getFullYear() }</p>
+				<Outlet />
+			</section>
+			<footer className="text-center mt-3">
+				<p>
+					© 2024 Milfer Muñoz. Todos los derechos reservados.{" "}
+					{new Date().getFullYear()}
+				</p>
+				<p>
+					Este sitio web fue diseñado y creado por <strong>Milfer Muñoz</strong>
+					.
+				</p>
+				<p>
+					Parte del contenido de este sitio web se basa en el trabajo de{" "}
+					<strong>NombreDelAutor</strong>, disponible en su{" "}
+					<a href="https://github.com/NombreDelAutor/Repositorio">
+						repositorio de GitHub
+					</a>
+					.
+				</p>
 			</footer>
 		</>
-	)
+	);
 } 
 
 export default AppLayout
