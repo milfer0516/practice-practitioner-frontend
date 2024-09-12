@@ -31,6 +31,12 @@ jobs:
           aws-region: us-east-2
 
       - name: Deploy to AWS S3
-        run: aws s3 sync build s3://practice-tests-practitioner/ --delete
+        run: |
+          if [[ -d build ]]; then
+            aws s3 sync build s3://practice-tests-practitioner/ --delete
+          else
+            echo "Build directory not found. Check if the build process completed successfully."
+            exit 1
+          fi
 
             
