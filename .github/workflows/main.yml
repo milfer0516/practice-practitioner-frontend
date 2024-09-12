@@ -9,6 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       VITE_PATH_TEST_QUESTION: ${{secrets.VITE_PATH_TEST_QUESTION}}
+      VITE_URL_API: ${{secrets.VITE_URL_API}}
 
     steps:
       - name: Checkout
