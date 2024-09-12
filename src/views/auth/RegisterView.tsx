@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useMutation } from "@tanstack/react-query";
 import { UserRegistrationForm } from "../../types/index";
 import ErrorMessage from "../../components/ErrorMessage";
@@ -14,6 +14,7 @@ export default function RegisterView() {
 		password: "",
 		password_confirmation: "",
 	};
+	const navigate = useNavigate();
 
 	const {
 		register,
@@ -23,28 +24,33 @@ export default function RegisterView() {
 		formState: { errors },
 	} = useForm<UserRegistrationForm>({ defaultValues: initialValues });
 
-    const { mutate } = useMutation({
-        mutationFn: createAccount,
-        onError: (error) => {
-            toast.error(error.message)
-        },
-        onSuccess: (data ) => {
-            console.log(data);
-            toast.success(data);
-            // Reset the form after successful registration.
-            reset();
-		}
-    })
+	const { mutate } = useMutation({
+		mutationFn: createAccount,
+		onError: (error) => {
+			toast.error(error.message);
+		},
+		onSuccess: (data) => {
+			console.log(data);
+			toast.success(data);
+			// Reset the form after successful registration.
+			reset();
+		},
+	});
 
 	const password = watch("password");
 
 	const handleRegister = (formData: UserRegistrationForm) => {
-        // Implement your registration logic here.
-        // Example: axios.post('/register', formData).then(response => console.log(response)).catch(error => console.error(error));
-        //console.log('Datos formulario de Registro: ', formData)
-        mutate(formData); // Call the mutation function with the form data.
-        window.location.href = "/auth/confirm-account";
-    };
+		// Implement your registration logic here.
+		// Example: axios.post('/register', formData).then(response => console.log(response)).catch(error => console.error(error));
+		//console.log('Datos formulario de Registro: ', formData)
+		mutate(formData); // Call the mutation function with the form data.
+		setTimeout(() => {
+			// Redirect to confirm account page after 10 seconds.
+			navigate("/auth/confirm-account");
+			// Reset the form after successful registration.
+			reset();
+		}, 10000);
+	};
 
 	return (
 		<>
