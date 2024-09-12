@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
-import { UserLoginForm } from "@/types/index";
-import ErrorMessage from "@/components/ErrorMessage";
+import { UserLoginForm } from "../../types/index";
+import ErrorMessage from "../../components/ErrorMessage";
 
 export default function LoginView() {
 	const initialValues: UserLoginForm = {
