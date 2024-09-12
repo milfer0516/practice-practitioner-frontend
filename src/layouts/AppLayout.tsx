@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom'
-import Logo from '@/components/Logo'
+import Logo from "../components/Logo";
 
-import NavMenu from '@/components/NavMenuIndex'
+import NavMenu from "../components/NavMenuIndex";
 const AppLayout = () => {
   return (
 		<>

@@ -175,7 +175,7 @@ const TestPractice = () => {
 			)}
 			<button
 				onClick={handleReset}
-				className="bg-fuchsia-700 hover:bg-fuchsia-800 w-full xl:w-1/4 p-3 text-white font-black text-xl cursor-pointer mt-4 rounded-lg"
+				className="bg-fuchsia-700 hover:bg-fuchsia-800 w-full xl:w-1/4 p-3  text-white font-black text-xl cursor-pointer mt-4 rounded-lg"
 			>
 				Intentar nuevamente
 			</button>

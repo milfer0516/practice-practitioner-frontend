@@ -15,7 +15,7 @@ jobs:
       - name: NodeJs Setup
         uses: actions/setup-node@v2
         with:
-          node-version: 16.x  # Or a compatible version
+          node-version: 20.x  # Or a compatible version
 
       - name: Install dependencies
         run: npm install
